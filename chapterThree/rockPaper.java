@@ -7,8 +7,8 @@ public class rockPaper{
       System.out.println("Play the Classic Game of Rock Paper Scissors!");
       System.out.println("Developed at GoalPost Programming");
       System.out.println("");
-      int playerOne = 0;
-      int playerTwo = 0;
+      int playerOne = 5;
+      int playerTwo = 5;
       int victory = 0;
       String winner = "hello World";
       String playerOneString = " One wone ";
@@ -44,7 +44,10 @@ public class rockPaper{
 
          while(playerOne != 0 && playerOne != 1 && playerOne != 2 && playerOne != 3 && playerOne != 4){
             System.out.println("I planned for every possiblity... Like you cheating"+" Try making a valid entry.");
-            playerOne = input.nextInt();
+            do{
+               playerTwo = rn.nextInt(5);
+               playerOne = input.nextInt();
+            } while (playerTwo == playerOne);
          }
             switch (playerOne){
                case 0:
@@ -92,7 +95,7 @@ public class rockPaper{
 
 
          System.out.println("");
-         playerTwo = rn.nextInt(5);
+
 
          //Determine the Victor!
          switch(playerTwo){
@@ -148,6 +151,9 @@ public class rockPaper{
             break;
             default:
             System.out.println("Error: I don't know what you did Moron."+" But You sure Screwed things up!");
+            System.out.println("System crashing - Current status");
+            System.out.println("You threw: "+playerOne);
+            System.out.println("Computer threw" +playerTwo);
             System.exit(1);
          }
 
