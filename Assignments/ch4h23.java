@@ -16,7 +16,6 @@ public class ch4h23{
       hours = df.format(hours);
       System.out.print("Enter hourly pay rate: ");
       double pay = input.nextDouble();
-      payString = Double.toString()
       System.out.print("Enter federal tax withholding rate: ");
       double federalTax = input.nextDouble();
       System.out.print("Enter State tax witholding rate: ");
@@ -32,24 +31,19 @@ public class ch4h23{
       //Format the dollar places
       netpay = df.format(netPay);
       grossPay = df.format(grossPay);
-      grossPay = grossPay.toString();
 
       //Send inputted name to uppercase
       name = name.toUpperCase();
 
       //Convert inputs to usable strings
-      hours = Double.toString(hours);
-      pay = Double.toString(pay);
       pay = df.format(pay);
-      federalTaxString = Double.toString(federaltax);
-      stateTax = Double.toString(stateTax);
 
       System.out.println("");
       System.out.print("Employee Name: "+ name);
-      System.out.print("Hourly pay rate: $"+ payString);
+      System.out.print("Hourly pay rate: $"+ pay);
       System.out.print("Gross Pay: $"+ grossPay);
       System.out.println("Deductions:");
-      System.out.println("\t"+"Federal Withholding: ("+federalTaxString+"%): $"+fedWith);
+      System.out.println("\t"+"Federal Withholding: ("+federalTax+"%): $"+fedWith);
       System.out.println("'\t'State Withholding ("+stateTax+"%): $"+ stateWith);
       System.out.println("'\t'Total Withholding: $"+totalDed);
       System.out.println("Net Pay: $"+ netPay);
