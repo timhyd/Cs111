@@ -5,15 +5,12 @@ import java.text.*;
 public class ch4h23{
    public static void main(String[] args){
       Scanner input = new Scanner(System.in);
-      //Prep format to add zeros to two zeros and cut off to two decimals
-      DecimalFormat df = new DecimalFormat( "#.00" );
 
       //Prompt for input
       System.out.print("Enter employee's name: ");
       String name = input.nextLine();
       System.out.print("Enter number of hours worked in a week: ");
       double hours = input.nextDouble();
-      hours = df.format(hours);
       System.out.print("Enter hourly pay rate: ");
       double pay = input.nextDouble();
       System.out.print("Enter federal tax withholding rate: ");
@@ -29,23 +26,24 @@ public class ch4h23{
       double netPay = grossPay - fedWith - stateWith;
 
       //Format the dollar places
-      netpay = df.format(netPay);
-      grossPay = df.format(grossPay);
+
+      netPay = Math.round(netPay*1000)/1000;
+      grossPay = Math.round(grossPay*1000)/1000;
+      pay = Math.round(pay*1000)/1000;
 
       //Send inputted name to uppercase
       name = name.toUpperCase();
-
-      //Convert inputs to usable strings
-      pay = df.format(pay);
+      federalTax = Math.round(federalTax*1000)/10;
+      stateTax = Math.round(stateTax*1000)/10;
 
       System.out.println("");
-      System.out.print("Employee Name: "+ name);
-      System.out.print("Hourly pay rate: $"+ pay);
-      System.out.print("Gross Pay: $"+ grossPay);
+      System.out.println("Employee Name: "+ name);
+      System.out.println("Hourly pay rate: $"+ pay);
+      System.out.println("Gross Pay: $"+ grossPay);
       System.out.println("Deductions:");
       System.out.println("\t"+"Federal Withholding: ("+federalTax+"%): $"+fedWith);
-      System.out.println("'\t'State Withholding ("+stateTax+"%): $"+ stateWith);
-      System.out.println("'\t'Total Withholding: $"+totalDed);
+      System.out.println("\t"+"State Withholding ("+stateTax+"%): $"+ stateWith);
+      System.out.println("\t"+"Total Withholding: $"+totalDed);
       System.out.println("Net Pay: $"+ netPay);
    //End code
    }
