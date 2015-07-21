@@ -9,7 +9,7 @@ public class ch6h23{
    System.out.println("Enter the String you would like to use below:");
    foo = input.nextLine();
    System.out.println("Enter the Character you would like to search for");
-   bar = input.next().charAt(0);
+   bar = input.nextLine().charAt(0);
    int result = count(foo, bar);
    System.out.println("The Character " + bar + " occurs " + result + " times.");
    //End main
@@ -17,7 +17,9 @@ public class ch6h23{
    public static int count(String str, char a){
    //Start Count method
       int result = 0;
-      for (int i = 0; i == str.length(); i++){
+      str = str.toLowerCase();
+      a = Character.toLowerCase(a);
+      for (int i = 0; i < str.length(); i++){
          if (str.charAt(i) == a){
             result++;
             //end if
