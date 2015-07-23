@@ -3,56 +3,52 @@ import java.util.*;
 public class ch9h1{
    public static void main(String[] args){
      Scanner input = new Scanner(System.in);
-     int i = 2;
-     rect rect1 = new rect();
-     rect rect2 = new rect();
-    double[][] objects = new double[i][3];
-     int k = 0;
-     for(int j = 0; j < i; j++){
-        k++;
-        System.out.println("Enter Height of Object " + k );
-        objects[j][0] = input.nextDouble();
-        System.out.println("Enter Width of Object " + k);
-        objects[j][1] = input.nextDouble();
-     }
-     rect rect1 = new rect(objects[0][0], objects[0][1]);
-     rect rect2 = new rect(objects[1][0], objects[1][1]);
+    rect rect1 = new rect();
+    rect rect2 = new rect();
+
+    System.out.println("Enter Height of Object 1");
+    double height = input.nextDouble();
+    System.out.println("Enter Width of Object 1");
+    double width = input.nextDouble();
+    rect1.rect(height, width);
+
+    System.out.println("Enter Height of Object 2");
+    height = input.nextDouble();
+    System.out.println("Enter Width of Object 2");
+    width = input.nextDouble();
+    rect2.rect(height, width);
+
+     System.out.println("Object 1:");
+     System.out.println("\t" + "Width: "+ rect1.width);
+     System.out.println("\t" + "Height: " + rect1.height);
+     System.out.println("\t" + "Area: " + rect1.getArea());
+     System.out.println("\t" + "Perimeter: " + rect1.getPerimeter());
+     System.out.println("Object 2:");
+     System.out.println("\t" + "Width: "+ rect2.width);
+     System.out.println("\t" + "Height: " + rect2.height);
+     System.out.println("\t" + "Area: " + rect2.getArea());
+     System.out.println("\t" + "Perimeter: " + rect2.getPerimeter());
 
 
-
-     k = 0;
-     for(int l = 0; l < i; l++){
-        k++;
-        System.out.println("Object " + k +":");
-        System.out.println("\t" + " Width: "+ objects[l][1] );
-        System.out.println("\t" + " Height: " + objects[l][0] );
-        System.out.println("\t" + "Area: " + objects[l][2] );
-        System.out.println("\t" + "Perimeter: " + objects[l][3] );
-     }
 
 
 } // End main
 
-public class rect {
+public static class rect {
    double height = 1;
    double width = 1;
 
-   public void rect(double customheight, double customwidth){
+   void rect(double customheight, double customwidth){
       height = customheight;
       width = customwidth;
    }//end rect object
-   double getArea(double areaheight, double areawidth){
-      return areaheight * areawidth;
+   double getArea(){
+      return height * width;
    }//End get area object
-   double getPerimeter(double periheight, double periwidth){
-      return periheight * 2 + periwidth * 2;
+   double getPerimeter(){
+      return height * 2 + width * 2;
    }//End periwidth pnkect
-   double getHeight(){
-      return height;
-   }
-   double getWidth(){
-      return width;
-   }
+
 
 }//end rect
 
