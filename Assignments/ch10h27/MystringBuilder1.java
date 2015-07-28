@@ -1,35 +1,38 @@
 //Original Code by Timothy Hydanus, Lead Programmmer - Goalpost Programming
 import java.util.*;
 public class MystringBuilder1{
+   String theString;
+      public MyStringBuilder1(String s){
+         theString = s;
+      } // End MyStringBuilder1
 
-      public String StringBuilder(String s){
-         return this.StringBuilder(s);
-      }//End MyStringBuilder1
-      public String append(String str){
-         return this.append(str);
+
+
+      public String append(MystringBuilder1 s){
+         this.append(s);
       }// End append
-      public String append(int i){
-         return this.append(i);
+      public append(int i){
+      this.append(i);
       }// End append
 
       public int length(){
-         return this.length();
+      return this.length();
       }// end lenght
 
       public char charAt(int index){
-         return this.charAt(index);
+      return this.charAt(index);
       }// End charAt
 
-      public String toLowerCase(){
-         return this.toLowerCase();
+      public toLowerCase(){
+      this.toLowerCase();
 
       }// End toLowerCase
 
-      public String substring(int begin, int end){
-         return this.substring(begin, end);
+      public substring(int begin, int end){
+      this.substring(begin, end);
       }
 
-      public String toString(){
-         return this.toString();
+      public toString(){
+      this.toString();
       }
 }// end Code

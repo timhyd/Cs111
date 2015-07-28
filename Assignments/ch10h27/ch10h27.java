@@ -9,10 +9,9 @@ public class ch10h27{
      // Input the inputed string
      String theString = input.nextLine();
      System.out.println("Thanks! Now I'm gonna do a ton of stuff to it!");
-     MystringBuilder1 theStringObject = new MystringBuilder1();
-     theStringObject.
-     StringBuilder(theString);
-
+     MystringBuilder1 theStringObject = new MystringBuilder1(theString);
+     //theStringObject.MystringBuilder1(theString);
+/*
      System.out.println("Now I am going to append to your string");
      System.out.println(theStringObject.append(theString));
 
@@ -26,6 +25,6 @@ public class ch10h27{
 
      System.out.println("Now I will show you a substring of your input using your previously given number");
      System.out.println(theStringObject.substring(0,index));
-
+*/
   }// end main
 } // end Code
