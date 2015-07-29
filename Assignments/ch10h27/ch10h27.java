@@ -13,12 +13,13 @@ public class ch10h27{
      theStringObject.MystringBuilder1(theString);
 
      System.out.println("Now I am going to append to your string");
-     theStringObject.append(theString);
-     System.out.println(theStringObjectAppend1.theString);
+     MystringBuilder1 theAppendedObject = new MystringBuilder1();
+     theAppendedObject = theStringObject.append(theStringObject);
+     System.out.println(theAppendedObject.theString);
 
      System.out.println("Now I am going to append to your string again" + "This time with the length of your inputed string");
-     theStringObject.append( theStringObject.length());
-     System.out.println(theStringObjectAppend2.theString);
+     theStringObject = theStringObject.append( theStringObject.length());
+     System.out.println(theStringObject.theString);
 
      System.out.println("Now I am going to show you which character is at a given point in your string");
      System.out.println("Please give a number between 0 and " + (theStringObject.length()-1) );
@@ -26,7 +27,11 @@ public class ch10h27{
      System.out.println(theStringObject.charAt(index));
 
      System.out.println("Now I will show you a substring of your input using your previously given number");
-     System.out.println(theStringSub.theString);
+     theStringObject = theStringObject.substring(0,index);
+     System.out.println(theStringObject.theString);
 
+     System.out.println("Now I will Pull the String out of the object.");
+     theModdedString = MystringBuilder1.toString();
+     System.out.println(theModdedString);
   }// end main
 } // end Code

@@ -43,7 +43,7 @@ public class MystringBuilder1{
    }// end subString
 
       public String toString(){
-      return theString.toString();
+      return theString;
 
    }
 }// end Code
