@@ -10,10 +10,10 @@ public class MystringBuilder1{
       }
 
 
-      public String append(MystringBuilder1 s){
+      public MystringBuilder1 append(MystringBuilder1 s){
          theString.append(s);
       }// End append
-      public void append(int i){
+      public MystringBuilder1 append(int i){
          theString.append(i);
       }// End append
 
@@ -25,16 +25,16 @@ public class MystringBuilder1{
          return theString.charAt(index);
       }// End charAt
 
-      public void toLowerCase(){
+      public MystringBuilder1 toLowerCase(){
          theString.toLowerCase();
 
       }// End toLowerCase
 
-      public void substring(int begin, int end){
+      public MystringBuilder1 substring(int begin, int end){
       theString.substring(begin, end);
       }
 
-      public void toString(){
+      public String toString(){
       theString.toString();
    }
 }// end Code
