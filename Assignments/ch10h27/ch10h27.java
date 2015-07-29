@@ -13,6 +13,7 @@ public class ch10h27{
      theStringObject.MystringBuilder1(theString);
 
      System.out.println("Now I am going to append to your string");
+     theStringObject.append(theString);
      System.out.println(theStringObjectAppend1.theString);
 
      System.out.println("Now I am going to append to your string again" + "This time with the length of your inputed string");
