@@ -2,37 +2,39 @@
 import java.util.*;
 public class MystringBuilder1{
    String theString;
-      public MyStringBuilder1(String s){
+      public void MystringBuilder1(String s){
          theString = s;
       } // End MyStringBuilder1
-
+      public void MystringBuilder1(){
+         theString = " ";
+      }
 
 
       public String append(MystringBuilder1 s){
-         this.append(s);
+         theString.append(s);
       }// End append
-      public append(int i){
-      this.append(i);
+      public void append(int i){
+         theString.append(i);
       }// End append
 
       public int length(){
-      return this.length();
+         return theString.length();
       }// end lenght
 
       public char charAt(int index){
-      return this.charAt(index);
+         return theString.charAt(index);
       }// End charAt
 
-      public toLowerCase(){
-      this.toLowerCase();
+      public void toLowerCase(){
+         theString.toLowerCase();
 
       }// End toLowerCase
 
-      public substring(int begin, int end){
-      this.substring(begin, end);
+      public void substring(int begin, int end){
+      theString.substring(begin, end);
       }
 
-      public toString(){
-      this.toString();
-      }
+      public void toString(){
+      theString.toString();
+   }
 }// end Code
