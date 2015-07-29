@@ -11,10 +11,15 @@ public class MystringBuilder1{
 
 
       public MystringBuilder1 append(MystringBuilder1 s){
-         theString.append(s);
+         MystringBuilder1 theStringObjectAppend1 = new MystringBuilder1();
+         theStringObjectAppend1 = theStringObjectAppend1.append(s);
+         return theStringObjectAppend1;
       }// End append
       public MystringBuilder1 append(int i){
-         theString.append(i);
+         MystringBuilder1 theStringObjectAppend2 = new MystringBuilder1();
+         theStringObjectAppend2 = theStringObjectAppend2.append(i);
+         return theStringObjectAppend2;
+
       }// End append
 
       public int length(){
@@ -26,15 +31,19 @@ public class MystringBuilder1{
       }// End charAt
 
       public MystringBuilder1 toLowerCase(){
-         theString.toLowerCase();
-
+         MystringBuilder1 theStringLower = new MystringBuilder1();
+         theStringLower = theStringLower.toLowerCase();
+         return theStringLower;
       }// End toLowerCase
 
       public MystringBuilder1 substring(int begin, int end){
-      theString.substring(begin, end);
-      }
+      MystringBuilder1 theStringSub = new MystringBuilder1();
+      theStringSub = theStringSub.substring(begin, end);
+      return theStringSub;
+   }// end subString
 
       public String toString(){
-      theString.toString();
+      return theString.toString();
+
    }
 }// end Code
