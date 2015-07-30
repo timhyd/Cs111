@@ -36,11 +36,12 @@ public class ch10h27{
      System.out.println(theStringObject.charAt(index));
 
      System.out.println("Now I will show you a substring of your input using your previously given number");
-     theStringObject = theStringObject.substring(0,index);
+     MystringBuilder1 theSubString = new MystringBuilder1();
+     theSubString = theStringObject.substring(0,index);
      System.out.println(theStringObject.theString);
 
      System.out.println("Now I will Pull the String out of the object.");
-     String theModdedString = theStringObject.toString();
+     String theModdedString = theStringObject.theString;
      System.out.println(theModdedString);
   }// end main
 } // end Code

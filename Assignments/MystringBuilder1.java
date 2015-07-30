@@ -20,7 +20,7 @@ public class MystringBuilder1{
       }// End append
       public MystringBuilder1 append(int i){
          MystringBuilder1 theStringObjectAppend2 = new MystringBuilder1();
-         theStringObjectAppend2 = this.theString + i;
+         theStringObjectAppend2.theString = this.theString + Integer.toString(i);
          return theStringObjectAppend2;
 
       }// End append
@@ -41,7 +41,7 @@ public class MystringBuilder1{
 
       public MystringBuilder1 substring(int begin, int end){
       MystringBuilder1 theStringSub = new MystringBuilder1();
-      theStringSub = theStringSub.substring(begin, end);
+      theStringSub.theString = this.theString.substring(begin, end);
       return theStringSub;
    }// end subString
 
