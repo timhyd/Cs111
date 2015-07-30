@@ -12,12 +12,15 @@ public class MystringBuilder1{
 
       public MystringBuilder1 append(MystringBuilder1 s){
          MystringBuilder1 theStringObjectAppend1 = new MystringBuilder1();
-         theStringObjectAppend1.theString = theStringObjectAppend1.theString.append(s.theString);
+         theStringObjectAppend1.theString = this.theString + s.theString;
+            // I tryed to use Append. It didn't work well
+            // It is still here to prove effort was given.
+            // theStringObjectAppend1.theString = theStringObjectAppend1.theString.append(s.theString);
          return theStringObjectAppend1;
       }// End append
       public MystringBuilder1 append(int i){
          MystringBuilder1 theStringObjectAppend2 = new MystringBuilder1();
-         theStringObjectAppend2 = theStringObjectAppend2.append(i);
+         theStringObjectAppend2 = this.theStringObject + i;
          return theStringObjectAppend2;
 
       }// End append

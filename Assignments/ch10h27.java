@@ -19,7 +19,7 @@ public class ch10h27{
      String theString = input.nextLine();
      System.out.println("Thanks! Now I'm gonna do a ton of stuff to it!");
      MystringBuilder1 theStringObject = new MystringBuilder1();
-     theStringObject.MystringBuilder1(theString);
+     theStringObject.theString = theString;
 
      System.out.println("Now I am going to append to your string");
      MystringBuilder1 theAppendedObject = new MystringBuilder1();
