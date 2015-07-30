@@ -12,7 +12,7 @@ public class MystringBuilder1{
 
       public MystringBuilder1 append(MystringBuilder1 s){
          MystringBuilder1 theStringObjectAppend1 = new MystringBuilder1();
-         theStringObjectAppend1 = theStringObjectAppend1.append(s);
+         theStringObjectAppend1.theString = theStringObjectAppend1.theString.append(s.theString);
          return theStringObjectAppend1;
       }// End append
       public MystringBuilder1 append(int i){
