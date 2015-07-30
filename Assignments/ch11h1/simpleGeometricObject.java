@@ -12,11 +12,13 @@ public class simpleGeometricObject {
       return this;
    }// End default myTriangleBuilder
 
-   public simpleGeometricObject myTriangleBuilder(Double newSide1,Double newSide2, Double newSide3){
+   public simpleGeometricObject myTriangleBuilder(Double newSide1,Double newSide2, Double newSide3, String color, boolean filled){
       dateCreated = new java.util.Date();
       this.side1 = newSide1;
       this.side2 = newSide2;
       this.side3 = newSide3;
+      this.filled = filled;
+      this.color = color;
       return this;
    }//End myTriangleBuilder Method
 
@@ -30,7 +32,7 @@ public class simpleGeometricObject {
       Double area;
       Double p;
       p = ((this.side1 + this.side2 + this.side3) / 2);
-      area = math.pow((p(p-this.side1)) , )
+      area = math.pow((p(p-this.side1)) , 0.5 );
    }// end getArea
 
    public simpleGeometricObject() {
