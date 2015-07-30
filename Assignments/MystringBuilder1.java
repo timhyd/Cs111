@@ -20,7 +20,7 @@ public class MystringBuilder1{
       }// End append
       public MystringBuilder1 append(int i){
          MystringBuilder1 theStringObjectAppend2 = new MystringBuilder1();
-         theStringObjectAppend2 = this.theStringObject.theString + i;
+         theStringObjectAppend2 = this.theString + i;
          return theStringObjectAppend2;
 
       }// End append
