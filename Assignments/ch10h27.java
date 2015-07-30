@@ -32,7 +32,7 @@ public class ch10h27{
      System.out.println(theStringObject.theString);
 
      System.out.println("Now I will Pull the String out of the object.");
-     theModdedString = MystringBuilder1.toString();
+     String theModdedString = MystringBuilder1.toString();
      System.out.println(theModdedString);
   }// end main
 } // end Code
