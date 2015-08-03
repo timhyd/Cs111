@@ -1,13 +1,5 @@
 //Original Code by Timothy Hydanus, Lead Programmmer - Goalpost Programming
-/*
-Active Errors:
-C:\programming\Cs111\Assignments>javac ch10h27.java
-ch10h27.java:35: error: non-static method toString() cannot be referenced from a static context
-     String theModdedString = MystringBuilder1.toString();
-                                              ^
-1 error
 
-*/
 import java.util.*;
 public class ch10h27{
    public static void main(String[] args){
