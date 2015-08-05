@@ -6,11 +6,16 @@ public class ch11h1{
      System.out.println("This Program Will enable you to work with a custom sized triangle");
      System.out.print("Input Side1: ");
      simpleGeometricObject myTriangle = new simpleGeometricObject();
-     myTriangle.side1 = input.nextDouble;
+     myTriangle.side1 = input.nextDouble();
      System.out.print("Input Side2: ");
-     myTriangle.side2 = input.nextDouble;
+     myTriangle.side2 = input.nextDouble();
      System.out.print("Input Side3: ");
-     myTriangle.side3 = input.nextDouble;
+     myTriangle.side3 = input.nextDouble();
+     System.out.println("Input desired Color: ");
+     myTriangle.color = input.nextLine();
+     System.out.print("Input filled or not (true/false): ");
+     myTriangle.filled = input.nextBoolean();
+
      System.out.print("Information on your given Triangle");
      System.out.print("\n\tThe Date Created: " + myTriangle.getDate() );
      System.out.print("\n\tThe Area: " + myTriangle.getArea() );

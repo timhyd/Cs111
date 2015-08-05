@@ -1,14 +1,17 @@
 public class simpleGeometricObject {
-   private String color = "white";
-   private boolean filled;
-   private java.util.Date dateCreated;
+   Double side1;
+   Double side2;
+   Double side3;
+   String color = "white";
+   boolean filled;
+   java.util.Date dateCreated;
 
    /** Construct a default geometric object */
    public simpleGeometricObject myTriangleBuilder(){
       dateCreated = new java.util.Date();
-      this.side1 = 1;
-      this.side2 = 1;
-      this.side3 = 1;
+      this.side1 = 1.0;
+      this.side2 = 1.0;
+      this.side3 = 1.0;
       return this;
    }// End default myTriangleBuilder
 
@@ -30,9 +33,9 @@ public class simpleGeometricObject {
 
    public Double getArea(){
       Double area;
-      Double p;
-      p = ((this.side1 + this.side2 + this.side3) / 2);
-      area = math.pow((p(p-this.side1)) , 0.5 );
+      Double p = ( (this.side1 + this.side2 + this.side3) / 2 );
+      area = Math.pow( ( p * ( p-this.side1) ) , 0.5 );
+      return area;
    }// end getArea
 
    public simpleGeometricObject() {

@@ -8,6 +8,7 @@ public class Test1 {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter the number of rows (1-10): ");
     int rows = input.nextInt();
+    String[][] spaceMatrix;
 
     //Test Edit: Timothy Hydanus Part a & b.
     while(rows<1 || rows>10){
@@ -37,7 +38,8 @@ public class Test1 {
 
     // Print original matrix
     System.out.println("\nOriginal matrix:");
-    printMatrix(originalMatrix);
+    spaceMatrix = arrangeMatrix(originalMatrix);
+    printMatrix(originalMatrix, spaceMatrix);
 
     // Transpose matrix
     // REPLACE LINE BELOW if doing Part (e) without Part (f)!
@@ -55,7 +57,9 @@ public class Test1 {
   /** The method for printing the contents of a matrix */
   public static void printMatrix(int[][] matrix, String[][] arrangeMatrix) {
     for (int row = 0; row < matrix.length; row++) {
+        for(int col = 0; col < matrix[row].length; col++){
         System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
+         }// End for
      }// Emd for
       System.out.println();
    }//End method
@@ -74,19 +78,25 @@ public class Test1 {
  }
 
 return transMatrix;
+
+}
+
  //Part D edit Timothy Hydanus. Adds extra spaces to allow neatly arranged print statements
 public static String[][] arrangeMatrix(int[][] matrixIn){
    int row = matrixIn.length;
-   int col = matrixIn[row].length;
+   int col = matrixIn[row-1].length;
    String activeIndex;
-   String[][] spaceMatrix;
+   String[][] spaceMatrix = new String[row][col];
+
    for(int rows = 0; rows < row; rows++){
    for (int cols = 0; cols < col; cols++) {
-      activeIndex = matrixIn[rows][cols];
+      activeIndex = Integer.toString(matrixIn[rows][cols]);
       for (int i = 0; i < activeIndex.length(); i++){
          spaceMatrix[rows][cols] += " ";
       }// End for
+   }
+}
 return spaceMatrix;
 }//End arrangeMatrix
-}// End transposeMatrix
+
 }//end code
