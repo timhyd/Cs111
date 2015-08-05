@@ -11,8 +11,8 @@ public class ch11h1{
      myTriangle.side2 = input.nextDouble();
      System.out.print("Input Side3: ");
      myTriangle.side3 = input.nextDouble();
-     System.out.println("Input desired Color: ");
-     myTriangle.color = input.nextLine();
+     System.out.print("Input desired Color: ");
+     myTriangle.color = input.next();
      System.out.print("Input filled or not (true/false): ");
      myTriangle.filled = input.nextBoolean();
 
@@ -20,6 +20,8 @@ public class ch11h1{
      System.out.print("\n\tThe Date Created: " + myTriangle.getDate() );
      System.out.print("\n\tThe Area: " + myTriangle.getArea() );
      System.out.print("\n\tThe Perimeter: " + myTriangle.getPerimeter() );
+     System.out.print("\n\tThe Color: " + myTriangle.color + " Filled ?= " + myTriangle.filled);
+
 
   }//End main
 }//end Code
