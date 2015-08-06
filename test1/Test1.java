@@ -103,7 +103,28 @@ public static String[][] arrangeMatrix(int[][] matrixIn){
       }// End for
    }
 }
+//spaceMatrix = arrangeMatrix2(spaceMatrix);
 return spaceMatrix;
 }//End arrangeMatrix
+public static String[][] arrangeMatrix2(String[][] matrixIn){
+   int maxString;
+   for (int row = 0; row < matrixIn.length; row++){
+      maxString = -1;
+      for(int col = 0; col < matrixIn[row].length; col++){
+         if(maxString < matrixIn[row][col].length() ){
+            maxString = matrixIn[row][col].length();
+         }//End If
+      }//End for
+      for (int col = 0; col < matrixIn[row].length; col++){
+         for(int i = 0; i < maxString; i++){
+            matrixIn[row+1][col] = " " + matrixIn[row+1][col];
+         }// End for
+      }// End for
 
+
+
+   }//End for
+
+return matrixIn;
+}//End arrangeMatrix2
 }//end code
