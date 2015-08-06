@@ -8,7 +8,7 @@ public class Test1 {
     Scanner input = new Scanner(System.in);
     System.out.print("Enter the number of rows (1-10): ");
     int rows = input.nextInt();
-    String[][] spaceMatrix;
+
 
     //Test Edit: Timothy Hydanus Part a & b.
     while(rows<1 || rows>10){
@@ -38,6 +38,7 @@ public class Test1 {
 
     // Print original matrix
     System.out.println("\nOriginal matrix:");
+    String[][] spaceMatrix;
     spaceMatrix = arrangeMatrix(originalMatrix);
     printMatrix(originalMatrix, spaceMatrix);
 
@@ -58,8 +59,10 @@ public class Test1 {
   public static void printMatrix(int[][] matrix, String[][] arrangeMatrix) {
     for (int row = 0; row < matrix.length; row++) {
         for(int col = 0; col < matrix[row].length; col++){
+        //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
         System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
          }// End for
+        System.out.println();
      }// Emd for
       System.out.println();
    }//End method
@@ -91,8 +94,12 @@ public static String[][] arrangeMatrix(int[][] matrixIn){
    for(int rows = 0; rows < row; rows++){
    for (int cols = 0; cols < col; cols++) {
       activeIndex = Integer.toString(matrixIn[rows][cols]);
-      for (int i = 0; i < activeIndex.length(); i++){
-         spaceMatrix[rows][cols] += " ";
+      //System.out.println("ActiveIndex = "+ activeIndex + "\tLength: " + Integer.toString(activeIndex.length()));
+      spaceMatrix[rows][cols] = " ";
+      for (int i = 1; i < activeIndex.length(); i++){
+         //System.out.print(Integer.toString(i));
+         spaceMatrix[rows][cols] = spaceMatrix[rows][cols] + " ";
+         //System.out.println("SpaceMatrix:"+spaceMatrix+"-");
       }// End for
    }
 }
