@@ -76,7 +76,7 @@ public class Test1 {
     for (int row = 0; row < matrix.length; row++) {
         for(int col = 0; col < matrix[row].length; col++){
         //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
-        System.out.print(arrangeMatrix[row][col] + matrix[row][col] + " ");
+        System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
          }// End for
         System.out.println();
      }// Emd for
@@ -101,7 +101,7 @@ return transMatrix;
 }
 
  //Part D edit Timothy Hydanus. Adds extra spaces to allow neatly arranged print statements
- // * also incomplete - couldn't make it work.... Moving on to part c
+ // * also incomplete - couldn't make it work .... Moving on to part c
 public static String[][] arrangeMatrix(int[][] matrixIn){
    int row = matrixIn.length;
    int col = matrixIn[row-1].length;
@@ -112,7 +112,7 @@ public static String[][] arrangeMatrix(int[][] matrixIn){
    for (int cols = 0; cols < col; cols++) {
       activeIndex = Integer.toString(matrixIn[rows][cols]);
       //System.out.println("ActiveIndex = "+ activeIndex + "\tLength: " + Integer.toString(activeIndex.length()));
-      spaceMatrix[rows][cols] = " ";
+      spaceMatrix[rows][cols] = "";
       for (int i = 1; i < activeIndex.length(); i++){
          //System.out.print(Integer.toString(i));
          spaceMatrix[rows][cols] = spaceMatrix[rows][cols] + " ";
@@ -141,26 +141,15 @@ public static String[][] arrangeMatrix2(String[][] matrixIn){
             diff = maxString.length() - matrixIn[row][col].length();
             for(int i = 1; i < diff; i++){
                matrixOut[row][col] += " ";
-            }//End if
+            }//End For
          }// End if
+         else{
+            matrixOut[row][col] = " ";
+         }
       }//End for
    }// End for
 
-/*
-   for (int col = 0; col < matrixIn[0].length; col++){
-      maxString = "";
-      for(int row = 0; row < matrixIn.length; row++){
-         if (matrixIn[row][col].length() > maxString.length() ){
-            maxString = matrixOut[row][col];
-         }// End if
-      }// End for
-      for(int row = 0; row < matrixIn.length; row++){
-         for(int i = matrixIn[row][col].length(); i < (maxString.length() + 1 ); i++){
-            matrixOut[row][col] += " ";
-         }// End for
-      }// End for
-   }// End for
-*/
+
 
 return matrixOut;
 }//End arrangeMatrix2\
