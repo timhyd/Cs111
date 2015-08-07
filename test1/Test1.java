@@ -77,6 +77,7 @@ public class Test1 {
         for(int col = 0; col < matrix[row].length; col++){
         //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
         System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
+       // System.out.println("-" + arrangeMatrix[row][col] + "-");
          }// End for
         System.out.println();
      }// Emd for
