@@ -60,7 +60,7 @@ public class Test1 {
     for (int row = 0; row < matrix.length; row++) {
         for(int col = 0; col < matrix[row].length; col++){
         //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
-        System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
+        System.out.print(matrix[row][col] + arrangeMatrix[row][col]);
          }// End for
         System.out.println();
      }// Emd for
@@ -103,28 +103,26 @@ public static String[][] arrangeMatrix(int[][] matrixIn){
       }// End for
    }
 }
-//spaceMatrix = arrangeMatrix2(spaceMatrix);
+spaceMatrix = arrangeMatrix2(spaceMatrix);
 return spaceMatrix;
 }//End arrangeMatrix
 public static String[][] arrangeMatrix2(String[][] matrixIn){
-   int maxString;
-   for (int row = 0; row < matrixIn.length; row++){
-      maxString = -1;
-      for(int col = 0; col < matrixIn[row].length; col++){
-         if(maxString < matrixIn[row][col].length() ){
-            maxString = matrixIn[row][col].length();
-         }//End If
-      }//End for
-      for (int col = 0; col < matrixIn[row].length; col++){
-         for(int i = 0; i < maxString; i++){
-            matrixIn[row+1][col] = " " + matrixIn[row+1][col];
+   String[][] matrixOut = matrixIn;
+   String maxString = "";
+   for (int col = 0; col < matrixIn[0].length; col++){
+      maxString = "";
+      for(int row = 0; row < matrixIn.length; row++){
+         if (matrixIn[row][col].length() > maxString.length() ){
+            maxString = matrixOut[row][col];
+         }// End if
+      }// End for
+      for(int row = 0; row < matrixIn.length; row++){
+         for(int i = matrixIn[row][col].length(); i < (maxString.length() + 1 ); i++){
+            matrixOut[row][col] += " ";
          }// End for
       }// End for
+   }// End for
 
-
-
-   }//End for
-
-return matrixIn;
+return matrixOut;
 }//End arrangeMatrix2
 }//end code
