@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-
+// This is some ugly code. A lot of stuff is kept in so I can reference previous work
+// I'm Sorry
+// Tim
 
 public class Test1 {
   /** Main method */
@@ -25,17 +27,31 @@ public class Test1 {
       cols = input.nextInt();
    }
 
+   // Test1 take-home edit Timothy Hydanus part c.
+   //Prompt user of the different values of the matrix
+   int[][] foobar = new int[rows][cols];
+   for(int i = 1; i < rows + 1; i++){
+      for(int j = 1; j < cols + 1; j++){
+      System.out.print("Please Enter Row: "+ i +" Column: " + j + ": ");
+      foobar[i-1][j-1] = input.nextInt();
+   }
+}
+   // Create originalMatrix as rectangular two dimensional array
+   int[][] originalMatrix = new int[rows][cols];
+   originalMatrix = foobar;
+
+   //Split the given rows
+//   originalMatrix = splitString(foobar, rows, cols);
 
 
-    // Create originalMatrix as rectangular two dimensional array
-    int[][] originalMatrix = new int[rows][cols];
-
+//Test Edit - Timothy Hydanus Matrix no longer random
+/*
     // Assign random values to originalMatrix
     for (int row = 0; row < originalMatrix.length; row++)
       for (int col = 0; col < originalMatrix[row].length; col++) {
         originalMatrix[row][col] = (int) (Math.random() * 1000);
       }
-
+*/
     // Print original matrix
     System.out.println("\nOriginal matrix:");
     String[][] spaceMatrix;
@@ -60,7 +76,7 @@ public class Test1 {
     for (int row = 0; row < matrix.length; row++) {
         for(int col = 0; col < matrix[row].length; col++){
         //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
-        System.out.print(matrix[row][col] + arrangeMatrix[row][col]);
+        System.out.print(arrangeMatrix[row][col] + matrix[row][col] + " ");
          }// End for
         System.out.println();
      }// Emd for
@@ -85,6 +101,7 @@ return transMatrix;
 }
 
  //Part D edit Timothy Hydanus. Adds extra spaces to allow neatly arranged print statements
+ // * also incomplete - couldn't make it work.... Moving on to part c
 public static String[][] arrangeMatrix(int[][] matrixIn){
    int row = matrixIn.length;
    int col = matrixIn[row-1].length;
@@ -109,6 +126,27 @@ return spaceMatrix;
 public static String[][] arrangeMatrix2(String[][] matrixIn){
    String[][] matrixOut = matrixIn;
    String maxString = "";
+   int diff = 0;
+   for (int col = 0; col < matrixIn[0].length; col++){
+      maxString = "";
+      for(int row = 0; row < matrixIn.length; row++){
+         if (matrixIn[row][col].length() > maxString.length() ){
+            maxString = matrixOut[row][col];
+         }// End if
+      }// End for
+      //Given the longest String we will now calculate the amount of ajustment needed
+      for(int row = 0; row < matrixIn.length; row++){
+         matrixOut[row][col] = "";
+         if (matrixIn[row][col].length() < maxString.length()){
+            diff = maxString.length() - matrixIn[row][col].length();
+            for(int i = 1; i < diff; i++){
+               matrixOut[row][col] += " ";
+            }//End if
+         }// End if
+      }//End for
+   }// End for
+
+/*
    for (int col = 0; col < matrixIn[0].length; col++){
       maxString = "";
       for(int row = 0; row < matrixIn.length; row++){
@@ -122,7 +160,26 @@ public static String[][] arrangeMatrix2(String[][] matrixIn){
          }// End for
       }// End for
    }// End for
+*/
 
 return matrixOut;
-}//End arrangeMatrix2
+}//End arrangeMatrix2\
+public static int[][] splitString(String[] matrixIn, int rows, int cols){
+   int[][] matrixOut = new int[rows][cols];
+   String[] splitResult = new String[cols];
+   for(int i = 0; i < matrixIn.length; i++){
+   splitResult = matrixIn[i].split(" ");
+   for(int j = 0; j < splitResult.length; j++){
+      matrixOut[i][j] = Integer.parseInt(splitResult[j]);
+   }// End For
+}// End for
+
+
+   //for(int j=1; j < splitResult.length; j++){
+      //splitResultint[j] = Integer.parseInt(splitResult[j]);
+
+   return matrixOut;
+}// End splitString
+
+
 }//end code
