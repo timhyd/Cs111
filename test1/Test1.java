@@ -76,7 +76,7 @@ public class Test1 {
     for (int row = 0; row < matrix.length; row++) {
         for(int col = 0; col < matrix[row].length; col++){
         //System.out.println(""+Integer.toString(row) +"\t" + Integer.toString(col) + "\t" + arrangeMatrix[row][col]);
-        System.out.print(arrangeMatrix[row][col] + matrix[row][col]);
+        System.out.print(arrangeMatrix[row][col] + matrix[row][col] + " ");
        // System.out.println("-" + arrangeMatrix[row][col] + "-");
          }// End for
         System.out.println();
@@ -138,7 +138,7 @@ public static String[][] arrangeMatrix2(String[][] matrixIn){
       //Given the longest String we will now calculate the amount of ajustment needed
       for(int row = 0; row < matrixIn.length; row++){
          matrixOut[row][col] = "";
-         if (matrixIn[row][col].length() < maxString.length()){
+         if (matrixIn[row][col].length() < maxString.length() ){
             diff = maxString.length() - matrixIn[row][col].length();
             for(int i = 1; i < diff; i++){
                matrixOut[row][col] += " ";
