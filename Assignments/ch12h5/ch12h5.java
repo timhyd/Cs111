@@ -16,10 +16,10 @@ public class ch12h5{
      System.out.print("Input filled or not (true/false): ");
      Boolean filled = input.nextBoolean();
      try{
-       Triangle.myTriangleBuilder(side1, side2, side3);
+       myTriangle.Triangle(side1, side2, side3);
      }
-     catch (ArithmeticException ex){
-        System.out.println("Exception:"+ex);
+     catch (IllegalTriangleException){
+        System.out.println("Exception: "+ex);
         System.out.println("Setting Triangle to Defaults");
         myTriangle.myTriangleBuilder();
      }

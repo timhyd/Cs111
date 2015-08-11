@@ -6,10 +6,9 @@ public class simpleGeometricObject {
    boolean filled;
    java.util.Date dateCreated;
 //Create Custom error checker
-public simpleGeometricObject Triangle(Double newSide1, Double newSide2, Double newSide3){
-   throws IllegalTriangleException{
+public simpleGeometricObject Triangle(Double newSide1, Double newSide2, Double newSide3)throws IllegalTriangleException{
       if(newSide1 + newSide2 < newSide3 || newSide1 + newSide3 < newSide2 || newSide2 + newSide3 < newSide1){
-         throw new ArithmeticException("One side is too long");
+         throw new IllegalTriangleException("One side is too long");
       }
       this.side1 = newSide1;
       this.side2 = newSide2;
@@ -18,7 +17,7 @@ public simpleGeometricObject Triangle(Double newSide1, Double newSide2, Double n
       this.color = color;
       return this;
    }
-}
+
    /** Construct a default geometric object */
    public simpleGeometricObject myTriangleBuilder(){
       dateCreated = new java.util.Date();
@@ -31,7 +30,7 @@ public simpleGeometricObject Triangle(Double newSide1, Double newSide2, Double n
    public simpleGeometricObject myTriangleBuilder(Double newSide1,Double newSide2, Double newSide3, String color, boolean filled){
       dateCreated = new java.util.Date();
       if(newSide1 + newSide2 < newSide3 || newSide1 + newSide3 < newSide2 || newSide2 + newSide3 < newSide1){
-         throw new ArithmeticException("One side is too long");
+         throw new IllegalTriangleException("Your Input is inconceivable!");
       }
       this.side1 = newSide1;
       this.side2 = newSide2;
