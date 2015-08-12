@@ -18,8 +18,8 @@ public class ch12h5{
      try{
        myTriangle.Triangle(side1, side2, side3);
      }
-     catch (IllegalTriangleException){
-        System.out.println("Exception: "+ex);
+     catch (IllegalTriangleException passedError){
+        System.out.println("Exception: "+passedError);
         System.out.println("Setting Triangle to Defaults");
         myTriangle.myTriangleBuilder();
      }

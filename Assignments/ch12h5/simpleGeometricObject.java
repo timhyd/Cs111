@@ -29,9 +29,9 @@ public simpleGeometricObject Triangle(Double newSide1, Double newSide2, Double n
 
    public simpleGeometricObject myTriangleBuilder(Double newSide1,Double newSide2, Double newSide3, String color, boolean filled){
       dateCreated = new java.util.Date();
-      if(newSide1 + newSide2 < newSide3 || newSide1 + newSide3 < newSide2 || newSide2 + newSide3 < newSide1){
-         throw new IllegalTriangleException("Your Input is inconceivable!");
-      }
+      //if(newSide1 + newSide2 < newSide3 || newSide1 + newSide3 < newSide2 || newSide2 + newSide3 < newSide1){
+         //throw new IllegalTriangleException("Your Input is inconceivable!");
+      //}
       this.side1 = newSide1;
       this.side2 = newSide2;
       this.side3 = newSide3;
