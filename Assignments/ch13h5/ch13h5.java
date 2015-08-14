@@ -37,11 +37,15 @@ public class ch13h5{
                return circle1;
          }
 
+      public double getArea(){
+            return ((math.pi)*(math.pow(this.radius, 2)));
+         }
 
-      public abstract double getArea();
    }
 
    }// End GeomtricObject circle
+
+
    class rectangle extends GeomtricObject{
    double sidex;
    double sidey;
@@ -71,6 +75,8 @@ public class ch13h5{
       }//End max function
 
 
-      public abstract double getArea();
+      public double getArea(){
+         return this.sidex * this.sidey;
+      }
    }//End GeomtricObject rectangle
 }// end code
