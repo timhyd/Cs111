@@ -78,12 +78,7 @@ public class ch13h5{
       }//End Max Method
 
 
-      public void printCircle(circle circle){
-         System.out.println("\tRadius: "+this.radius);
-         System.out.println("\tColor: "+this.color);
-         System.out.println("\tFilled: "+this.filled);
-         System.out.println();
-      }//End PrintCirlcle
+
 
 
 
@@ -122,12 +117,21 @@ public class ch13h5{
       }//End max function
 
 
-      public void printRect(rectangle rect){
-         System.out.println("\tHeight: "+this.sidey);
-         System.out.println("\tWidth: "+this.sidex);
-         System.out.println("\tColor: "+this.color);
-         System.out.println("\tFilled: "+this.filled);
-         System.out.println();
+
       }//End printRect
    }//End GeomtricObject rectangle
+   public void printRect(rectangle rect){
+      System.out.println("\tHeight: "+rect.sidey);
+      System.out.println("\tWidth: "+rect.sidex);
+      System.out.println("\tColor: "+rect.color);
+      System.out.println("\tFilled: "+rect.filled);
+      System.out.println();
+
+   }//End printRect
+   public void printCircle(circle theCircle){
+      System.out.println("\tRadius: "+theCircle.radius);
+      System.out.println("\tColor: "+theCircle.color);
+      System.out.println("\tFilled: "+theCircle.filled);
+      System.out.println();
+   }//End PrintCirlcle
 }// end code
