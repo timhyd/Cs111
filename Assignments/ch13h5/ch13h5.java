@@ -128,7 +128,7 @@ public class ch13h5{
       System.out.println();
    }//End print rect
 
-   }//End printRect
+   
    public void printCircle(circle theCircle){
       System.out.println("\tRadius: "+theCircle.radius);
       System.out.println("\tColor: "+theCircle.color);
