@@ -4,28 +4,64 @@ Modify the simpleGeometricObject class to implement the Comparable interface, an
 */
 import java.*;
 public class ch13h5{
-   public static void main(String[] args){
-      simpleGeometricObject c1 = new circle(1.0, purple, true);
-      simpleGeometricObject r1 = new rectangle(2.0, 2.0, shartruse, false);
-      simpleGeometricObject c2 = new circle(2.0, brown, false);
-      simpleGeometricObject r2 = new rectangle(1.0, 1.0, red, true);
+   public void main(String[] args){
+      circle circle1 = new circle(1.0, "purple", true);
+      rectangle rect1 = new rectangle(2.0, 2.0, "shartruse", false);
+      circle circle2 = new circle(2.0, "brown", false);
+      rectangle rect2 = new rectangle(1.0, 1.0, "red", true);
+      circle circleResult = new circle(1.0, "null", false);
+      rectangle rectResult = new rectangle(1.0, 1.0, "null", false);
+      System.out.println();
+      System.out.println("For the inputs:");
+      System.out.println("The Circles:");
+      System.out.println("Circle1:");
+      printCircle(circle1);
+      System.out.println("Circle2: ");
+      printCircle(circle2);
+      System.out.println("The Rectangle");
+      System.out.println("Rectangle1: ");
+      printRect(rect1);
+      System.out.println("Rectangle2: ");
+      printRect(rect2);
+      System.out.println();
+
+      circleResult = maxCircle(circle1, circle2);
+
+      rectResult = maxCircle(rect1, rect2);
+
+      System.out.println("The Circles: ");
+      if(circleResult.area == circle1.area){
+         System.out.println("Circle1 Is Larger");
+      }
+      else{
+         System.out.println("Circle2 Is Larger");
+      }
+      System.out.println("The Rectangles:");
+      if(rectResult.area == rect1.area){
+         System.out.println("Rectangle1 Is Larger");
+      }
+      else{
+         System.out.println("Reectange2 Is larger");
+      }
 
 
 
    }// End main
    class circle extends simpleGeometricObject{
       double radius;
-      double area = ((Math.PI)*(Math.pow(this.radius, 2)));
+      double area;
       public circle(double newRadius){
          this.radius = newRadius;
-      }
+         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
+      }//End circle constructer
       public circle(double newRadius, String newColor, Boolean newFilled){
          this.radius = newRadius;
          this.color = newColor;
          this.filled = newFilled;
-      }
-      public simpleGeometricObject max(simpleGeometricObject circle1, simpleGeometricObject circle2){
-         int result = (circle1.getArea).compareTo(circle2.getArea);
+         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
+      }//Ends another circle constructor
+      public circle maxCircle(circle circle1, circle circle2){
+         int result = circle1.area.compareTo(circle2.area);
 
          switch(result){
             case 1:
@@ -36,16 +72,18 @@ public class ch13h5{
                break;
             case 0:
                return circle1;
-         }
-//
-//         public static double getArea(){
-//               return ((math.pi)*(math.pow(this.radius, 2)));
-//            }
+         }//End switch
 
-      }
-      public double getArea(){
-            return this.area;
-         }
+
+      }//End Max Method
+
+
+      public void printCircle(circle circle){
+         System.out.println("\tRadius: "+this.radius);
+         System.out.println("\tColor: "+this.color);
+         System.out.println("\tFilled: "+this.filled);
+         System.out.println();
+      }//End PrintCirlcle
 
 
 
@@ -55,19 +93,21 @@ public class ch13h5{
    class rectangle extends simpleGeometricObject{
    double sidex;
    double sidey;
-   double area = sidex * sidey;
+   double area;
       public rectangle(double newsidex, double newsidey){
          this.sidex = newsidex;
          this.sidey = newsidey;
+         this.area = sidex * sidey;
       }
-      public rectangle(double newsidex, double newsidey, double newColor, Boolean newfilled){
+      public rectangle(double newsidex, double newsidey, String newColor, Boolean newfilled){
          this.sidex = newsidex;
          this.sidey = newsidey;
          this.color = newColor;
          this.filled = newfilled;
+         this.area = sidex * sidey;
       }
-      public simpleGeometricObject max(simpleGeometricObject rect1, simpleGeometricObject rect2){
-         int result = (rect1.getArea).compareTo(rect2.getArea);
+      public rectangle maxRect(rectangle rect1, rectangle rect2){
+         int result = rect1.area.compareTo(rect2.area);
          switch(result){
             case 1:
                return rect1;
@@ -82,8 +122,12 @@ public class ch13h5{
       }//End max function
 
 
-      public double getArea(){
-         return this.area;
-      }
+      public void printRect(rectangle rect){
+         System.out.println("\tHeight: "+this.sidey);
+         System.out.println("\tWidth: "+this.sidex);
+         System.out.println("\tColor: "+this.color);
+         System.out.println("\tFilled: "+this.filled);
+         System.out.println();
+      }//End printRect
    }//End GeomtricObject rectangle
 }// end code
