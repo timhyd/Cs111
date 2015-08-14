@@ -1,29 +1,30 @@
 //Original Code by Timothy Hydanus, Lead Programmmer - Goalpost Programming
 /*The Assignment
-Modify the GeometricObject class to implement the Comparable interface, and define a static max method in the GeometricObject class for finding the larger of two GeometricObject objects. Draw the UML diagram and implement the new GeometricObject class. Write a Test Program that tusese the max method to find teh larger of two circles and the larger of two rectangles.
+Modify the simpleGeometricObject class to implement the Comparable interface, and define a static max method in the simpleGeometricObject class for finding the larger of two simpleGeometricObject objects. Draw the UML diagram and implement the new simpleGeometricObject class. Write a Test Program that tusese the max method to find teh larger of two circles and the larger of two rectangles.
 */
 import java.*;
 public class ch13h5{
    public static void main(String[] args){
-      GeometricObject c1 = new circle(1.0, purple, true);
-      GeometricObject r1 = new rectangle(2.0, 2.0, shartruse, false);
-      GeometricObject c2 = new circle(2.0, brown, false);
-      GeometricObject r2 = new rectangle(1.0, 1.0, red, true);
+      simpleGeometricObject c1 = new circle(1.0, purple, true);
+      simpleGeometricObject r1 = new rectangle(2.0, 2.0, shartruse, false);
+      simpleGeometricObject c2 = new circle(2.0, brown, false);
+      simpleGeometricObject r2 = new rectangle(1.0, 1.0, red, true);
 
 
 
    }// End main
-   class circle extends GeometricObject{
+   class circle extends simpleGeometricObject{
       double radius;
+      double area = ((Math.PI)*(Math.pow(this.radius, 2)));
       public circle(double newRadius){
          this.radius = newRadius;
       }
       public circle(double newRadius, String newColor, Boolean newFilled){
-         this.Radius = newRadius;
+         this.radius = newRadius;
          this.color = newColor;
          this.filled = newFilled;
       }
-      public GeomtricObject max(GeomtricObject circle1, GeomtricObject circle2){
+      public simpleGeometricObject max(simpleGeometricObject circle1, simpleGeometricObject circle2){
          int result = (circle1.getArea).compareTo(circle2.getArea);
 
          switch(result){
@@ -43,7 +44,7 @@ public class ch13h5{
 
       }
       public double getArea(){
-            return ((Math.pi)*(Math.pow(this.radius, 2)));
+            return this.area;
          }
 
 
@@ -51,9 +52,10 @@ public class ch13h5{
    }// End GeomtricObject circle
 
 
-   class rectangle extends GeomtricObject{
+   class rectangle extends simpleGeometricObject{
    double sidex;
    double sidey;
+   double area = sidex * sidey;
       public rectangle(double newsidex, double newsidey){
          this.sidex = newsidex;
          this.sidey = newsidey;
@@ -64,8 +66,8 @@ public class ch13h5{
          this.color = newColor;
          this.filled = newfilled;
       }
-      public GeomtricObject max(GeomtricObject rect1, GeomtricObject rect2){
-         int result = rect1.compareTo(rect2);
+      public simpleGeometricObject max(simpleGeometricObject rect1, simpleGeometricObject rect2){
+         int result = (rect1.getArea).compareTo(rect2.getArea);
          switch(result){
             case 1:
                return rect1;
@@ -81,7 +83,7 @@ public class ch13h5{
 
 
       public double getArea(){
-         return this.sidex * this.sidey;
+         return this.area;
       }
    }//End GeomtricObject rectangle
 }// end code
