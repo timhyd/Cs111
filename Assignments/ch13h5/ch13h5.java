@@ -36,12 +36,17 @@ public class ch13h5{
             case 0:
                return circle1;
          }
+//
+//         public static double getArea(){
+//               return ((math.pi)*(math.pow(this.radius, 2)));
+//            }
 
+      }
       public double getArea(){
-            return ((math.pi)*(math.pow(this.radius, 2)));
+            return ((Math.pi)*(Math.pow(this.radius, 2)));
          }
 
-   }
+
 
    }// End GeomtricObject circle
 
