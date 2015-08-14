@@ -61,7 +61,7 @@ public class ch13h5{
          this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
       }//Ends another circle constructor
       public circle maxCircle(circle circle1, circle circle2){
-         int result = circle1.area.compareTo(circle2.area);
+         int result = circle1.compareTo(circle2);
 
          switch(result){
             case 1:
@@ -102,7 +102,7 @@ public class ch13h5{
          this.area = sidex * sidey;
       }
       public rectangle maxRect(rectangle rect1, rectangle rect2){
-         int result = rect1.area.compareTo(rect2.area);
+         int result = rect1.compareTo(rect2);
          switch(result){
             case 1:
                return rect1;
@@ -128,7 +128,7 @@ public class ch13h5{
       System.out.println();
    }//End print rect
 
-   
+
    public void printCircle(circle theCircle){
       System.out.println("\tRadius: "+theCircle.radius);
       System.out.println("\tColor: "+theCircle.color);
