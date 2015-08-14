@@ -118,7 +118,7 @@ public class ch13h5{
 
 
 
-      }//End printRect
+
    }//End GeomtricObject rectangle
    public void printRect(rectangle rect){
       System.out.println("\tHeight: "+rect.sidey);
@@ -126,6 +126,7 @@ public class ch13h5{
       System.out.println("\tColor: "+rect.color);
       System.out.println("\tFilled: "+rect.filled);
       System.out.println();
+   }//End print rect
 
    }//End printRect
    public void printCircle(circle theCircle){
