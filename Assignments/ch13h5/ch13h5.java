@@ -47,7 +47,7 @@ public class ch13h5{
 
 
    }// End main
-   class circle extends simpleGeometricObject{
+   class circle extends simpleGeometricObject implements Comparable {
       double radius;
       double area;
       public circle(double newRadius){
@@ -76,7 +76,20 @@ public class ch13h5{
 
 
       }//End Max Method
-
+      
+      public int compareTo(circle secCircle){
+         if(this.area == secCircle.area){
+            return 0;
+         }// End if
+         else{
+         if (this.area > secCircle.area){
+            return 1;
+         }//End if
+         else{
+            return -1;
+         }//End else
+      }//End else
+   }//End compareTo
 
 
 
@@ -85,7 +98,7 @@ public class ch13h5{
    }// End GeomtricObject circle
 
 
-   class rectangle extends simpleGeometricObject{
+   class rectangle extends simpleGeometricObject  implements Comparable {
    double sidex;
    double sidey;
    double area;
@@ -116,6 +129,19 @@ public class ch13h5{
          }
       }//End max function
 
+      public int compareTo(Rectangle secRect){
+         if(this.area == secRect.area){
+            return 0;
+         }// End if
+         else{
+         if (this.area > secRect.area){
+            return 1;
+         }//End if
+         else{
+            return -1;
+         }//End else
+      }//End else
+   }//End compareTo
 
 
 
