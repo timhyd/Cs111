@@ -76,7 +76,7 @@ public class ch13h5{
 
 
       }//End Max Method
-      
+      @Override
       public int compareTo(circle secCircle){
          if(this.area == secCircle.area){
             return 0;
@@ -128,7 +128,7 @@ public class ch13h5{
                break;
          }
       }//End max function
-
+      @Override
       public int compareTo(Rectangle secRect){
          if(this.area == secRect.area){
             return 0;
