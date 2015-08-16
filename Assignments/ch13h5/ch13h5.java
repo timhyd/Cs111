@@ -127,7 +127,7 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
-   public circle maxCircle impliments Comparable(circle circle1, circle circle2){
+   public static circle maxCircle impliments Comparable(circle circle1, circle circle2){
       int result = circle1.compareTo(circle2);
 
       switch(result){
@@ -145,7 +145,7 @@ public class ch13h5{
    }//End Max Method
 
 
-public rectangle maxRect impliments comparable(rectangle rect1, rectangle rect2){
+public static rectangle maxRect impliments comparable(rectangle rect1, rectangle rect2){
    int result = rect1.compareTo(rect2);
    switch(result){
       case 1:
