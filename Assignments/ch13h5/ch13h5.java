@@ -27,7 +27,7 @@ public class ch13h5{
 
       circleResult = maxCircle(circle1, circle2);
 
-      rectResult = maxCircle(rect1, rect2);
+      rectResult = maxRect(rect1, rect2);
 
       System.out.println("The Circles: ");
       if(circleResult.area == circle1.area){
@@ -47,7 +47,7 @@ public class ch13h5{
 
 
    }// End main
-   class circle extends simpleGeometricObject implements Comparable {
+   class circle extends simpleGeometricObject{
       double radius;
       double area;
       public circle(double newRadius){
@@ -60,6 +60,7 @@ public class ch13h5{
          this.filled = newFilled;
          this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
       }//Ends another circle constructor
+
       public circle maxCircle(circle circle1, circle circle2){
          int result = circle1.compareTo(circle2);
 
@@ -76,7 +77,7 @@ public class ch13h5{
 
 
       }//End Max Method
-      @Override
+      //@Override
       public int compareTo(circle secCircle){
          if(this.area == secCircle.area){
             return 0;
@@ -89,16 +90,11 @@ public class ch13h5{
             return -1;
          }//End else
       }//End else
-   }//End compareTo
-
-
-
-
-
+      }//End compareTo
    }// End GeomtricObject circle
 
 
-   class rectangle extends simpleGeometricObject  implements Comparable {
+   class rectangle extends simpleGeometricObject {
    double sidex;
    double sidey;
    double area;
@@ -114,21 +110,8 @@ public class ch13h5{
          this.filled = newfilled;
          this.area = sidex * sidey;
       }
-      public rectangle maxRect(rectangle rect1, rectangle rect2){
-         int result = rect1.compareTo(rect2);
-         switch(result){
-            case 1:
-               return rect1;
-               break;
-            case -1:
-               return rect2;
-               break;
-            case 0:
-               return rect1;
-               break;
-         }
-      }//End max function
-      @Override
+
+      //@Override
       public int compareTo(Rectangle secRect){
          if(this.area == secRect.area){
             return 0;
@@ -141,11 +124,45 @@ public class ch13h5{
             return -1;
          }//End else
       }//End else
-   }//End compareTo
-
-
+      }//End compareTo
 
    }//End GeomtricObject rectangle
+   public circle maxCircle(circle circle1, circle circle2){
+      int result = circle1.compareTo(circle2);
+
+      switch(result){
+         case 1:
+            return circle1;
+            break;
+         case -1:
+            return circle2;
+            break;
+         case 0:
+            return circle1;
+      }//End switch
+
+
+   }//End Max Method
+
+
+public rectangle maxRect(rectangle rect1, rectangle rect2){
+   int result = rect1.compareTo(rect2);
+   switch(result){
+      case 1:
+         return rect1;
+         break;
+      case -1:
+         return rect2;
+         break;
+      case 0:
+         return rect1;
+         break;
+   }
+}//End max function
+
+
+
+
    public void printRect(rectangle rect){
       System.out.println("\tHeight: "+rect.sidey);
       System.out.println("\tWidth: "+rect.sidex);
