@@ -92,6 +92,54 @@ public class ch13h5{
       }//End else
       }//End compareTo
    }// End GeomtricObject circle
+   public void printRect(rectangle rect){
+      System.out.println("\tHeight: "+rect.sidey);
+      System.out.println("\tWidth: "+rect.sidex);
+      System.out.println("\tColor: "+rect.color);
+      System.out.println("\tFilled: "+rect.filled);
+      System.out.println();
+   }//End print rect
+
+
+   public void printCircle(circle theCircle){
+      System.out.println("\tRadius: "+theCircle.radius);
+      System.out.println("\tColor: "+theCircle.color);
+      System.out.println("\tFilled: "+theCircle.filled);
+      System.out.println();
+   }//End PrintCirlcle
+   public class circle maxCircle impliments Comparable(circle circle1, circle circle2){
+      int result = circle1.compareTo(circle2);
+
+      switch(result){
+         case 1:
+            return circle1;
+            break;
+         case -1:
+            return circle2;
+            break;
+         case 0:
+            return circle1;
+      }//End switch
+
+
+   }
+
+
+   public class rectangle maxRect impliments comparable(rectangle rect1, rectangle rect2){
+   int result = rect1.compareTo(rect2);
+   switch(result){
+      case 1:
+         return rect1;
+         break;
+      case -1:
+         return rect2;
+         break;
+      case 0:
+         return rect1;
+         break;
+   }
+}
+}// ch13h5 class
 
 
    class rectangle extends simpleGeometricObject {
@@ -127,55 +175,3 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
-   public static circle maxCircle impliments Comparable(circle circle1, circle circle2){
-      int result = circle1.compareTo(circle2);
-
-      switch(result){
-         case 1:
-            return circle1;
-            break;
-         case -1:
-            return circle2;
-            break;
-         case 0:
-            return circle1;
-      }//End switch
-
-
-   }//End Max Method
-
-
-public static rectangle maxRect impliments comparable(rectangle rect1, rectangle rect2){
-   int result = rect1.compareTo(rect2);
-   switch(result){
-      case 1:
-         return rect1;
-         break;
-      case -1:
-         return rect2;
-         break;
-      case 0:
-         return rect1;
-         break;
-   }
-}//End max function
-
-
-
-
-   public void printRect(rectangle rect){
-      System.out.println("\tHeight: "+rect.sidey);
-      System.out.println("\tWidth: "+rect.sidex);
-      System.out.println("\tColor: "+rect.color);
-      System.out.println("\tFilled: "+rect.filled);
-      System.out.println();
-   }//End print rect
-
-
-   public void printCircle(circle theCircle){
-      System.out.println("\tRadius: "+theCircle.radius);
-      System.out.println("\tColor: "+theCircle.color);
-      System.out.println("\tFilled: "+theCircle.filled);
-      System.out.println();
-   }//End PrintCirlcle
-}// end code
