@@ -18,7 +18,7 @@ public class ch13h5{
       printCircle(circle1);
       System.out.println("Circle2: ");
       printCircle(circle2);
-      System.out.println("The Rectangle");
+      System.out.println("The rectangle");
       System.out.println("Rectangle1: ");
       printRect(rect1);
       System.out.println("Rectangle2: ");
@@ -63,7 +63,7 @@ public class ch13h5{
       System.out.println("\tFilled: "+theCircle.filled);
       System.out.println();
    }//End PrintCirlcle
-   public class circle maxCircle (circle circle1, circle circle2){
+   public circle maxCircle (circle circle1, circle circle2){
       int result = circle1.compareTo(circle2);
 
       switch(result){
@@ -81,7 +81,7 @@ public class ch13h5{
    }
 
 
-   public class rectangle maxRect(rectangle rect1, rectangle rect2){
+   public rectangle maxRect(rectangle rect1, rectangle rect2){
    int result = rect1.compareTo(rect2);
    switch(result){
       case 1:
@@ -98,7 +98,7 @@ public class ch13h5{
 }// ch13h5 class
 
 
-   class rectangle extends simpleGeometricObject impliments comparable {
+   class rectangle extends simpleGeometricObject implements Comparable {
    double sidex;
    double sidey;
    double area;
@@ -116,7 +116,7 @@ public class ch13h5{
       }
 
       //@Override
-      public int compareTo(Rectangle secRect){
+      public int compareTo(rectangle secRect){
          if(this.area == secRect.area){
             return 0;
          }// End if
@@ -131,7 +131,7 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
-   class circle extends simpleGeometricObject impliments comparable{
+   class circle extends simpleGeometricObject  implements Comparable{
       double radius;
       double area;
       public circle(double newRadius){
@@ -148,7 +148,7 @@ public class ch13h5{
 
       }//End Max Method
       //@Override
-      public int compareTo(circle secCircle){
+      public static int compareTo(circle secCircle){
          if(this.area == secCircle.area){
             return 0;
          }// End if
