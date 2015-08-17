@@ -63,7 +63,7 @@ public class ch13h5{
       System.out.println("\tFilled: "+theCircle.filled);
       System.out.println();
    }//End PrintCirlcle
-   public circle maxCircle (circle circle1, circle circle2){
+   public void maxCircle (circle circle1, circle circle2){
       int result = circle1.compareTo(circle2);
 
       switch(result){
@@ -81,7 +81,7 @@ public class ch13h5{
    }
 
 
-   public rectangle maxRect(rectangle rect1, rectangle rect2){
+   public void maxRect(rectangle rect1, rectangle rect2){
    int result = rect1.compareTo(rect2);
    switch(result){
       case 1:
@@ -95,6 +95,7 @@ public class ch13h5{
          break;
    }
 }
+
 }// ch13h5 class
 
 
@@ -146,7 +147,7 @@ public class ch13h5{
       }//Ends another circle constructor
 
 
-      }//End Max Method
+
       //@Override
       public static int compareTo(circle secCircle){
          if(this.area == secCircle.area){
