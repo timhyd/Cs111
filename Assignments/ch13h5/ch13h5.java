@@ -114,22 +114,38 @@ class rectangle extends simpleGeometricObject implements Comparable {
          this.filled = newfilled;
          this.area = sidex * sidey;
       }
-
-      @Override
+      //@Override
+	    public String toString() {
+	        return "";
+	    }
+      /*//@Override
       public int compareTo(rectangle secRect){
          if(this.area == secRect.area){
             return 0;
          }// End if
-         else{
+         else
          if (this.area > secRect.area){
             return 1;
          }//End if
          else{
             return -1;
          }//End else
-      }//End else
-      }//End compareTo
 
+      }//End compareTo
+*/
+@Override
+
+	    public int compareTo(rectangle secRect) {
+
+	        if(this.area == secRect.area)
+
+	            return 0;
+
+	        else
+
+	            return this.area > secRect.area ? 1 : -1;
+
+	    }
    }//End GeomtricObject rectangle
 class circle extends simpleGeometricObject  implements Comparable{
       double radius;
@@ -146,6 +162,10 @@ class circle extends simpleGeometricObject  implements Comparable{
       }//Ends another circle constructor
 
 
+      @Override
+	    public String toString() {
+	        return "";
+	    }
 
       @Override
       public int compareTo(circle secCircle){
