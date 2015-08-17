@@ -98,7 +98,7 @@ public class ch13h5{
 }// ch13h5 class
 
 
-   abstract class rectangle extends simpleGeometricObject implements Comparable {
+class rectangle extends simpleGeometricObject implements Comparable {
    double sidex;
    double sidey;
    double area;
@@ -115,7 +115,7 @@ public class ch13h5{
          this.area = sidex * sidey;
       }
 
-      //@Override
+      @Override
       public int compareTo(rectangle secRect){
          if(this.area == secRect.area){
             return 0;
@@ -131,7 +131,7 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
-   abstract class circle extends simpleGeometricObject  implements Comparable{
+class circle extends simpleGeometricObject  implements Comparable{
       double radius;
       double area;
       public circle(double newRadius){
@@ -147,8 +147,8 @@ public class ch13h5{
 
 
 
-      //@Override
-      public static int compareTo(circle secCircle){
+      @Override
+      public int compareTo(circle secCircle){
          if(this.area == secCircle.area){
             return 0;
          }// End if
