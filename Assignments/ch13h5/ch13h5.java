@@ -47,7 +47,7 @@ public class ch13h5{
 
 
    }// End main
-   class circle extends simpleGeometricObject{
+   class circle extends simpleGeometricObject impliments comparable{
       double radius;
       double area;
       public circle(double newRadius){
@@ -107,7 +107,7 @@ public class ch13h5{
       System.out.println("\tFilled: "+theCircle.filled);
       System.out.println();
    }//End PrintCirlcle
-   public class circle maxCircle impliments Comparable(circle circle1, circle circle2){
+   public class circle maxCircle (circle circle1, circle circle2){
       int result = circle1.compareTo(circle2);
 
       switch(result){
@@ -125,7 +125,7 @@ public class ch13h5{
    }
 
 
-   public class rectangle maxRect impliments comparable(rectangle rect1, rectangle rect2){
+   public class rectangle maxRect(rectangle rect1, rectangle rect2){
    int result = rect1.compareTo(rect2);
    switch(result){
       case 1:
@@ -142,7 +142,7 @@ public class ch13h5{
 }// ch13h5 class
 
 
-   class rectangle extends simpleGeometricObject {
+   class rectangle extends simpleGeometricObject impliments comparable {
    double sidex;
    double sidey;
    double area;
