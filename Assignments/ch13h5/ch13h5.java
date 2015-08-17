@@ -98,7 +98,7 @@ public class ch13h5{
 }// ch13h5 class
 
 
-   class rectangle extends simpleGeometricObject implements Comparable {
+   abstract class rectangle extends simpleGeometricObject implements Comparable {
    double sidex;
    double sidey;
    double area;
@@ -131,7 +131,7 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
-   class circle extends simpleGeometricObject  implements Comparable{
+   abstract class circle extends simpleGeometricObject  implements Comparable{
       double radius;
       double area;
       public circle(double newRadius){
