@@ -47,51 +47,7 @@ public class ch13h5{
 
 
    }// End main
-   class circle extends simpleGeometricObject impliments comparable{
-      double radius;
-      double area;
-      public circle(double newRadius){
-         this.radius = newRadius;
-         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
-      }//End circle constructer
-      public circle(double newRadius, String newColor, Boolean newFilled){
-         this.radius = newRadius;
-         this.color = newColor;
-         this.filled = newFilled;
-         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
-      }//Ends another circle constructor
 
-      public circle maxCircle(circle circle1, circle circle2){
-         int result = circle1.compareTo(circle2);
-
-         switch(result){
-            case 1:
-               return circle1;
-               break;
-            case -1:
-               return circle2;
-               break;
-            case 0:
-               return circle1;
-         }//End switch
-
-
-      }//End Max Method
-      //@Override
-      public int compareTo(circle secCircle){
-         if(this.area == secCircle.area){
-            return 0;
-         }// End if
-         else{
-         if (this.area > secCircle.area){
-            return 1;
-         }//End if
-         else{
-            return -1;
-         }//End else
-      }//End else
-      }//End compareTo
-   }// End GeomtricObject circle
    public void printRect(rectangle rect){
       System.out.println("\tHeight: "+rect.sidey);
       System.out.println("\tWidth: "+rect.sidex);
@@ -175,3 +131,34 @@ public class ch13h5{
       }//End compareTo
 
    }//End GeomtricObject rectangle
+   class circle extends simpleGeometricObject impliments comparable{
+      double radius;
+      double area;
+      public circle(double newRadius){
+         this.radius = newRadius;
+         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
+      }//End circle constructer
+      public circle(double newRadius, String newColor, Boolean newFilled){
+         this.radius = newRadius;
+         this.color = newColor;
+         this.filled = newFilled;
+         this.area = ((Math.PI)*(Math.pow(this.radius, 2)));
+      }//Ends another circle constructor
+
+
+      }//End Max Method
+      //@Override
+      public int compareTo(circle secCircle){
+         if(this.area == secCircle.area){
+            return 0;
+         }// End if
+         else{
+         if (this.area > secCircle.area){
+            return 1;
+         }//End if
+         else{
+            return -1;
+         }//End else
+      }//End else
+      }//End compareTo
+   }// End GeomtricObject circle
