@@ -26,6 +26,20 @@ public class ch17h19{
      System.out.println("Enter the name of the file you wish to view:");
      System.out.println("Include the file extension");
      String fileName = prompt.next();
+     try (DataInputStream input =
+      new DataInputStream(new FileInputStream(fileName))) {
+      String s1 = "";
+      while (true){
+
+      s1 = String.format("%8s", Integer.toBinaryString(input.readByte() & 0xFF)).replace(' ', '0');
+     System.out.print(s1 + " ");
+  }
+     }
+
+   catch (EOFException ex) {
+     System.out.println();
+   }
+    /*
      try (
        // Create an input stream for the file
        DataInputStream input = new DataInputStream(fileName);
@@ -40,6 +54,7 @@ public class ch17h19{
          System.out.print(s1 + " ");
      }
   }
-     catch(IOException ex){};
+
+     catch(IOException ex){};*/
    }
  }
