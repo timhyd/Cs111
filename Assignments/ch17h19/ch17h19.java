@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class ch17h19{
-   public static void main(String[] args){
+   public static void main(String[] args) throws IOException {
       Scanner prompt = new Scanner(System.in);
      /*(try (
        // Create an output stream to the file
@@ -28,16 +28,18 @@ public class ch17h19{
      String fileName = prompt.next();
      try (
        // Create an input stream for the file
-       FileInputStream input = new FileInputStream(fileName);
+       DataInputStream input = new DataInputStream(fileName);
      ) {
        // Read values from the file
        int value;
-       byte b1;
+       int b1;
        String s1;
-       while ((b1 = input.read()) != -1)
-
+       while ( 1==1){
+         b1 = input.read();
           s1 = String.format("%8s", Integer.toBinaryString(b1 & 0xFF)).replace(' ', '0');
          System.out.print(s1 + " ");
      }
+  }
+     catch(IOException ex){};
    }
  }
