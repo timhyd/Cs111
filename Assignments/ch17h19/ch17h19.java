@@ -34,7 +34,7 @@ public class ch17h19{
        int value;
        byte b1;
        String s1;
-       while ((b1 = input.readByte()) != -1)
+       while ((b1 = input.read()) != -1)
 
           s1 = String.format("%8s", Integer.toBinaryString(b1 & 0xFF)).replace(' ', '0');
          System.out.print(s1 + " ");
