@@ -4,7 +4,7 @@ Modify the simpleGeometricObject class to implement the Comparable interface, an
 */
 import java.*;
 public class ch13h5{
-   public void main(String[] args){
+   public static void main(String[] args){
       circle circle1 = new circle(1.0, "purple", true);
       rectangle rect1 = new rectangle(2.0, 2.0, "shartruse", false);
       circle circle2 = new circle(2.0, "brown", false);
@@ -48,7 +48,7 @@ public class ch13h5{
 
    }// End main
 
-   public void printRect(rectangle rect){
+   public static void printRect(rectangle rect){
       System.out.println("\tHeight: "+rect.sidey);
       System.out.println("\tWidth: "+rect.sidex);
       System.out.println("\tColor: "+rect.color);
@@ -57,13 +57,13 @@ public class ch13h5{
    }//End print rect
 
 
-   public void printCircle(circle theCircle){
+   public static void printCircle(circle theCircle){
       System.out.println("\tRadius: "+theCircle.radius);
       System.out.println("\tColor: "+theCircle.color);
       System.out.println("\tFilled: "+theCircle.filled);
       System.out.println();
    }//End PrintCirlcle
-   public circle maxCircle (circle circle1, circle circle2){
+   public static circle maxCircle (circle circle1, circle circle2){
       int result = circle1.compareTo(circle2);
       if(result == 1){
          return circle1;
@@ -79,7 +79,7 @@ public class ch13h5{
    }//end maxCircle
 
 
-   public rectangle maxRect(rectangle rect1, rectangle rect2){
+   public static rectangle maxRect(rectangle rect1, rectangle rect2){
    int result = rect1.compareTo(rect2);
    if(result == 1){
       return rect1;
@@ -98,7 +98,7 @@ public class ch13h5{
 }// ch13h5 class
 
 
-class rectangle extends simpleGeometricObject implements Comparable {
+class rectangle extends simpleGeometricObject implements Comparable<rectangle> {
    double sidex;
    double sidey;
    double area;
@@ -118,21 +118,7 @@ class rectangle extends simpleGeometricObject implements Comparable {
 	    public String toString() {
 	        return "";
 	    }
-      /*//@Override
-      public int compareTo(rectangle secRect){
-         if(this.area == secRect.area){
-            return 0;
-         }// End if
-         else
-         if (this.area > secRect.area){
-            return 1;
-         }//End if
-         else{
-            return -1;
-         }//End else
 
-      }//End compareTo
-*/
 @Override
 
 	    public int compareTo(rectangle secRect) {
@@ -147,7 +133,7 @@ class rectangle extends simpleGeometricObject implements Comparable {
 
 	    }
    }//End GeomtricObject rectangle
-class circle extends simpleGeometricObject  implements Comparable{
+class circle extends simpleGeometricObject  implements Comparable<circle>{
       double radius;
       double area;
       public circle(double newRadius){
@@ -163,12 +149,12 @@ class circle extends simpleGeometricObject  implements Comparable{
 
 
       @Override
-	    public String toString() {
+	    public static String toString() {
 	        return "";
 	    }
 
       @Override
-      public int compareTo(circle secCircle){
+      public static int compareTo(circle secCircle){
          if(this.area == secCircle.area){
             return 0;
          }// End if
