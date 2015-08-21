@@ -19,17 +19,35 @@ public class ch14h11 extends Application {
     Circle pupil2 = new Circle();
 
     head.centerXProperty().bind(pane.widthProperty().divide(2));
-    pane.widthProperty().bind(pane.heightProperty());
-
+    //pane.widthProperty().bind(pane.heightProperty());
+    head.centerYProperty().bind(pane.heightProperty().divide(2));
 
     //pane.widthPropertyProperty().bind(pane.heightProperty());
-    head.setRadius(50);
+
+
+
+
+
+
+
+    
+
+    head.setRadius().bind(pane.widthProperty().divide(3.5));
+
+
+
+
+
+
+
+
+
     head.setStroke(Color.BLACK);
     head.setFill(Color.WHITE);
     pane.getChildren().add(head); // Add circle to the pane
     eye1.setRadius(5);
-    eye1.setStroke(Color.Black);
-    eye1.setFill(Color.White);
+    eye1.setStroke(Color.BLACK);
+    eye1.setFill(Color.WHITE);
     pane.getChildren().add(eye1);
 
     // Create a scene and place it in the stage
