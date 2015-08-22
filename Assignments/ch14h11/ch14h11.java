@@ -6,6 +6,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
+import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 
 
@@ -17,8 +18,8 @@ public class ch14h11 extends Application {
 
     // Create a circle and set its properties
     Circle head = new Circle();
-    Circle eye1 = new Circle();
-    Circle eye2 = new Circle();
+    //Ellipse eye1 = new Ellipse();
+   // Ellipse eye2 = new Ellipse();
     Circle pupil1 = new Circle();
     Circle pupil2 = new Circle();
     //Arc mouth = new Arc();
@@ -34,7 +35,7 @@ public class ch14h11 extends Application {
     pane.getChildren().add(head); // Add circle to the pane
 
     //Create and add eyes without pupils
-    eye1.setRadius(15);
+    Ellipse eye1 = new Ellipse(0,0,17,14);
     eye1.setStroke(Color.BLACK);
     eye1.setFill(Color.WHITE);
 
@@ -42,7 +43,7 @@ public class ch14h11 extends Application {
     eye1.centerYProperty().bind(head.centerYProperty().subtract(25));
     pane.getChildren().add(eye1);
 
-    eye2.setRadius(15);
+    Ellipse eye2 = new Ellipse(0, 0, 17, 14);
     eye2.setStroke(Color.BLACK);
     eye2.setFill(Color.WHITE);
 
@@ -66,15 +67,27 @@ public class ch14h11 extends Application {
     pupil2.centerYProperty().bind(head.centerYProperty().subtract(25));
     pane.getChildren().add(pupil2);
 
-
-
-
-    Arc mouth1 = new Arc(0, 0,60, 5, 0, 50);
+    Arc mouth1 = new Arc(0, 0, 50, 20, 0, -180);
     mouth1.centerXProperty().bind(head.centerXProperty());
     mouth1.centerYProperty().bind(head.centerYProperty().add(35));
     mouth1.setStroke(Color.BLACK);
+    mouth1.setType(ArcType.OPEN);
     mouth1.setFill(Color.WHITE);
     pane.getChildren().add(mouth1);
+
+    Polygon nose1 = new Polygon();
+    pane.getChildren().add(nose1);
+    Polygon.setFIll(Color.WHITE);
+    Polygon.setStroke(Color.BLACK);
+    ObservableList<Double> list = nose1.getPoints();
+    double centerX = 17.0 / 2, centerY = 17.0 / 2;
+    nose1.centerXProperty().bind(head.centerXProperty());
+    nose1.centerYProperty().bind(head.centerYProperty());
+    for (int i = 0; i <3; i++){
+      list.add(centerX + 17.0 *Math.cos(2 * i * Math.PI / 6));
+      list.add(centerY - 17.0 *Math.cos(2 * i * Math.PI / 6));
+   }
+    pane.getChildren.add(nose);
 
 
     // Create a scene and place it in the stage
@@ -84,10 +97,6 @@ public class ch14h11 extends Application {
     primaryStage.show(); // Display the stage
   }
 
-  /**
-   * The main method is only needed for the IDE with limited
-   * JavaFX support. Not needed for running from the command line.
-   */
   public static void main(String[] args) {
     launch(args);
   }
