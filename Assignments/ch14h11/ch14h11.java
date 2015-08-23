@@ -77,10 +77,11 @@ public class ch14h11 extends Application {
 
     Polygon nose1 = new Polygon();
     pane.getChildren().add(nose1);
-    Polygon.setFIll(Color.WHITE);
-    Polygon.setStroke(Color.BLACK);
+    nose1.setFill(Color.WHITE);
+    nose1.setStroke(Color.BLACK);
     ObservableList<Double> list = nose1.getPoints();
-    double centerX = 17.0 / 2, centerY = 17.0 / 2;
+    Double centerX = 17.0 / 2;
+    Double centerY = 17.0 / 2;
     nose1.centerXProperty().bind(head.centerXProperty());
     nose1.centerYProperty().bind(head.centerYProperty());
     for (int i = 0; i <3; i++){
