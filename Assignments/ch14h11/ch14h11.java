@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -76,19 +77,16 @@ public class ch14h11 extends Application {
     pane.getChildren().add(mouth1);
 
     Polygon nose1 = new Polygon();
-    pane.getChildren().add(nose1);
     nose1.setFill(Color.WHITE);
     nose1.setStroke(Color.BLACK);
-    ObservableList<Double> list = nose1.getPoints();
-    Double centerX = 17.0 / 2;
-    Double centerY = 17.0 / 2;
-    nose1.centerXProperty().bind(head.centerXProperty());
-    nose1.centerYProperty().bind(head.centerYProperty());
-    for (int i = 0; i <3; i++){
-      list.add(centerX + 17.0 *Math.cos(2 * i * Math.PI / 6));
-      list.add(centerY - 17.0 *Math.cos(2 * i * Math.PI / 6));
-   }
-    pane.getChildren.add(nose);
+
+    nose1.getPoints().addAll(new Double[]{
+    20.0, 10.0,
+    10.0, 30.0,
+    30.0, 30.0});
+
+
+    pane.getChildren().add(nose1);
 
 
     // Create a scene and place it in the stage
