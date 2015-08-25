@@ -48,13 +48,13 @@ public class ch15h3 extends Application {
            }
       });
     Button btDown = new Button("Down");
-    btUp.setOnAction(new EventHandler<ActionEvent>() {
+    btDown.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
                pacMan.setCenterY(pacMan.getCenterY() - 7);
            }
       });
-
+   pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
 
 
     // Create a scene and place it in the stage
