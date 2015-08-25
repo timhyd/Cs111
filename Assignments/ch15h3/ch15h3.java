@@ -6,13 +6,15 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 
 public class ch15h3 extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Create a pane and set its properties
     HBox pane = new HBox(10);
-    pane.setAlignment(Pos.CENTER);
+    pane.setAlignment(Pos.BOTTOM_CENTER);
 
     Button btLeft = new Button("Left");
     Button btRight = new Button("Right");
@@ -23,19 +25,29 @@ public class ch15h3 extends Application {
     btLeft.setOnAction(handlerLeft);
     RIGHTHandlerClass handlerRight = new RIGHTHandlerClass();
     btRight.setOnAction(handlerRight);
-    
+
     UPHandlerClass handlerUp = new UPHandlerClass();
-    btLeft.setOnAction(handlerUp);
+    btUp.setOnAction(handlerUp);
     DOWNHandlerClass handlerDown = new DOWNHandlerClass();
-    btRight.setOnAction(handlerDown);
+    btDown.setOnAction(handlerDown);
     pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
 
+    //Create Movable Cirlce
+    Circle pacMan = new Circle();
+    pacMan.setCenterX(200);
+    pacMan.setCenterY(100);
+    pacMan.setRadius(36);
+    pacMan.setFill(Color.WHITE);
+    pacMan.setStroke(Color.BLACK);
+    pane.getChildren().addAll(pacMan);
+
     // Create a scene and place it in the stage
-    Scene scene = new Scene(pane);
+    Scene scene = new Scene(pane, 400, 200);
     primaryStage.setTitle("Exercise15_03"); // Set the stage title
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
   }
+
 
   /**
    * The main method is only needed for the IDE with limited
@@ -48,25 +60,29 @@ public class ch15h3 extends Application {
 class LEFTHandlerClass implements EventHandler<ActionEvent> {
    @Override
    public void handle(ActionEvent e) {
-      System.out.println("Left Buttton clicked");
+      pacMan.setCenterX(pacMan.getCenterX() - 7);
+      //System.out.println("Left Buttton clicked");
    }
 }
 class RIGHTHandlerClass implements EventHandler<ActionEvent> {
    @Override
    public void handle(ActionEvent e) {
-      System.out.println("Right Buttton clicked");
+      pacMan.setCenterX(pacMan.getCenterX() + 7);
+      //System.out.println("Right Buttton clicked");
    }
 }
 class UPHandlerClass implements EventHandler<ActionEvent> {
    @Override
    public void handle(ActionEvent e) {
-      System.out.println("Up Buttton clicked");
+      pacMan.setCenterY(pacMan.getCenterY() - 10);
+      //System.out.println("Up Buttton clicked");
    }
 }
 class DOWNHandlerClass implements EventHandler<ActionEvent> {
    @Override
    public void handle(ActionEvent e) {
-      System.out.println("Down Buttton clicked");
+      pacMan.setCenterY(pacMan.getCenterY() + 10);
+      //System.out.println("Down Buttton clicked");
    }
 }
 /*
