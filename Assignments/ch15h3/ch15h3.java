@@ -29,14 +29,14 @@ public class ch15h3 extends Application {
     btLeft.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterX(pacMan.getCenterX() - 7);
+               pacMan.setCenterX(pacMan.getCenterX() - 10);
            }
       });
     Button btRight = new Button("Right");
     btRight.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterX(pacMan.getCenterX() + 7);
+               pacMan.setCenterX(pacMan.getCenterX() + 10);
            }
       });
 
@@ -44,14 +44,14 @@ public class ch15h3 extends Application {
     btUp.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterY(pacMan.getCenterY() - 7);
+               pacMan.setCenterY(pacMan.getCenterY() - 70);
            }
       });
     Button btDown = new Button("Down");
     btDown.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterY(pacMan.getCenterY() - 7);
+               pacMan.setCenterY(pacMan.getCenterY() - 70);
            }
       });
    pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
