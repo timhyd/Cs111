@@ -15,23 +15,6 @@ public class ch15h3 extends Application {
     // Create a pane and set its properties
     HBox pane = new HBox(10);
     pane.setAlignment(Pos.BOTTOM_CENTER);
-
-    Button btLeft = new Button("Left");
-    Button btRight = new Button("Right");
-    Button btUp = new Button("Up");
-    Button btDown = new Button("Down");
-
-    LEFTHandlerClass handlerLeft = new LEFTHandlerClass();
-    btLeft.setOnAction(handlerLeft);
-    RIGHTHandlerClass handlerRight = new RIGHTHandlerClass();
-    btRight.setOnAction(handlerRight);
-
-    UPHandlerClass handlerUp = new UPHandlerClass();
-    btUp.setOnAction(handlerUp);
-    DOWNHandlerClass handlerDown = new DOWNHandlerClass();
-    btDown.setOnAction(handlerDown);
-    pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
-
     //Create Movable Cirlce
     Circle pacMan = new Circle();
     pacMan.setCenterX(200);
@@ -40,6 +23,39 @@ public class ch15h3 extends Application {
     pacMan.setFill(Color.WHITE);
     pacMan.setStroke(Color.BLACK);
     pane.getChildren().addAll(pacMan);
+
+
+    Button btLeft = new Button("Left");
+    btLeft.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent event) {
+               pacMan.setCenterX(pacMan.getCenterX() - 7);
+           }
+      });
+    Button btRight = new Button("Right");
+    btRight.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent event) {
+               pacMan.setCenterX(pacMan.getCenterX() + 7);
+           }
+      });
+
+    Button btUp = new Button("Up");
+    btUp.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent event) {
+               pacMan.setCenterY(pacMan.getCenterY() - 7);
+           }
+      });
+    Button btDown = new Button("Down");
+    btUp.setOnAction(new EventHandler<ActionEvent>() {
+           @Override
+           public void handle(ActionEvent event) {
+               pacMan.setCenterY(pacMan.getCenterY() - 7);
+           }
+      });
+
+
 
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 400, 200);
@@ -56,47 +72,5 @@ public class ch15h3 extends Application {
   public static void main(String[] args) {
     launch(args);
   }
-}
-class LEFTHandlerClass implements EventHandler<ActionEvent> {
-   @Override
-   public void handle(ActionEvent e) {
-      pacMan.setCenterX(pacMan.getCenterX() - 7);
-      //System.out.println("Left Buttton clicked");
-   }
-}
-class RIGHTHandlerClass implements EventHandler<ActionEvent> {
-   @Override
-   public void handle(ActionEvent e) {
-      pacMan.setCenterX(pacMan.getCenterX() + 7);
-      //System.out.println("Right Buttton clicked");
-   }
-}
-class UPHandlerClass implements EventHandler<ActionEvent> {
-   @Override
-   public void handle(ActionEvent e) {
-      pacMan.setCenterY(pacMan.getCenterY() - 10);
-      //System.out.println("Up Buttton clicked");
-   }
-}
-class DOWNHandlerClass implements EventHandler<ActionEvent> {
-   @Override
-   public void handle(ActionEvent e) {
-      pacMan.setCenterY(pacMan.getCenterY() + 10);
-      //System.out.println("Down Buttton clicked");
-   }
-}
-/*
-class OKHandlerClass implements EventHandler<ActionEvent> {
-  @Override
-  public void handle(ActionEvent e) {
-    System.out.println("OK button clicked");
-  }
-}
 
-class CancelHandlerClass implements EventHandler<ActionEvent> {
-  @Override
-  public void handle(ActionEvent e) {
-    System.out.println("Cancel button clicked");
-  }
 }
-*/
