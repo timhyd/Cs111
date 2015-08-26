@@ -60,12 +60,13 @@ public class ch15h3 extends Application {
 
            }
       });
-   pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
-   btLeft.setAlignment(Pos.BOTTOM_CENTER);
-   btRight.setAlignment(Pos.BOTTOM_CENTER);
-   btUp.setAlignment(Pos.BOTTOM_CENTER);
-   btDown.setAlignment(Pos.BOTTOM_CENTER);
-
+   pane.setBottom(btLeft, btRight, btUp, btDown);
+   /*
+   btLeft.setAlignment(Pos.CENTER);
+   btRight.setAlignment(Pos.CENTER);
+   btUp.setAlignment(Pos.CENTER);
+   btDown.setAlignment(Pos.CENTER);
+*/
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 400, 200);
     primaryStage.setTitle("Exercise15_03"); // Set the stage title
