@@ -8,13 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
+import java.applet.Applet;
 
 public class ch15h3 extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Create a pane and set its properties
     HBox pane = new HBox(10);
-    pane.setAlignment(Pos.BOTTOM_CENTER);
+
     //Create Movable Cirlce
     Circle pacMan = new Circle();
     pacMan.setCenterX(200);
@@ -28,8 +29,10 @@ public class ch15h3 extends Application {
     Button btLeft = new Button("Left");
     btLeft.setOnAction(new EventHandler<ActionEvent>() {
            @Override
-           public void handle(ActionEvent event) {
+           public void handle (ActionEvent event){
                pacMan.setCenterX(pacMan.getCenterX() - 10);
+               pane.getChildren().removeAll(pacMan);
+               pane.getChildren().addAll(pacMan);
            }
       });
     Button btRight = new Button("Right");
@@ -37,6 +40,7 @@ public class ch15h3 extends Application {
            @Override
            public void handle(ActionEvent event) {
                pacMan.setCenterX(pacMan.getCenterX() + 10);
+               //repaint();
            }
       });
 
@@ -45,6 +49,7 @@ public class ch15h3 extends Application {
            @Override
            public void handle(ActionEvent event) {
                pacMan.setCenterY(pacMan.getCenterY() - 70);
+               //repaint();
            }
       });
     Button btDown = new Button("Down");
@@ -52,10 +57,14 @@ public class ch15h3 extends Application {
            @Override
            public void handle(ActionEvent event) {
                pacMan.setCenterY(pacMan.getCenterY() - 70);
+
            }
       });
    pane.getChildren().addAll(btLeft, btRight, btUp, btDown);
-
+   btLeft.setAlignment(Pos.BOTTOM_CENTER);
+   btRight.setAlignment(Pos.BOTTOM_CENTER);
+   btUp.setAlignment(Pos.BOTTOM_CENTER);
+   btDown.setAlignment(Pos.BOTTOM_CENTER);
 
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 400, 200);
