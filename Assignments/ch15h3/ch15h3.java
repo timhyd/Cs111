@@ -2,7 +2,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +14,7 @@ public class ch15h3 extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Create a pane and set its properties
-    HBox pane = new HBox(10);
+     BorderPane pane = new BorderPane();
 
     //Create Movable Cirlce
     Circle pacMan = new Circle();

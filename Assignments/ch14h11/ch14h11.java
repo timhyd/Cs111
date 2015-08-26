@@ -8,7 +8,7 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Polygon;
-import javafx.stage.Stage;
+import javafx .stage.Stage;
 
 
 public class ch14h11 extends Application {
@@ -83,7 +83,7 @@ public class ch14h11 extends Application {
     nose1.getPoints().addAll(new Double[]{
     20.0, 10.0,
     10.0, 30.0,
-    30.0, 30.0});
+    30.0, 30how.0});
 
 
     pane.getChildren().add(nose1);
