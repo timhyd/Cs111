@@ -3,6 +3,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +16,10 @@ public class ch15h3 extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Create a pane and set its properties
-     BorderPane pane = new BorderPane();
+      //BorderPane pane = new BorderPane();
+      BorderPane pane = new BorderPane();
+      HBox buttonPane = new HBox();
+      buttonPane.setAlignment(Pos.CENTER);
 
     //Create Movable Cirlce
     Circle pacMan = new Circle();
@@ -31,6 +36,10 @@ public class ch15h3 extends Application {
            @Override
            public void handle (ActionEvent event){
                pacMan.setCenterX(pacMan.getCenterX() - 10);
+
+               if(pacMan.getCenterX()<0){
+                  pacMan.setCenterX(pacMan.getCenterX() + 10);
+               }
                pane.getChildren().removeAll(pacMan);
                pane.getChildren().addAll(pacMan);
            }
@@ -40,7 +49,12 @@ public class ch15h3 extends Application {
            @Override
            public void handle(ActionEvent event) {
                pacMan.setCenterX(pacMan.getCenterX() + 10);
-               //repaint();
+
+               if(pacMan.getCenterX()>pane.getWidth()){
+                  pacMan.setCenterX(pacMan.getCenterX() - 10);
+               }
+               pane.getChildren().removeAll(pacMan);
+               pane.getChildren().addAll(pacMan);
            }
       });
 
@@ -48,19 +62,30 @@ public class ch15h3 extends Application {
     btUp.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterY(pacMan.getCenterY() - 70);
-               //repaint();
+               pacMan.setCenterY(pacMan.getCenterY() - 7);
+
+               if(pacMan.getCenterY()<0){
+                  pacMan.setCenterY(pacMan.getCenterY() + 7);
+               }
+               pane.getChildren().removeAll(pacMan);
+               pane.getChildren().addAll(pacMan);
            }
       });
     Button btDown = new Button("Down");
     btDown.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent event) {
-               pacMan.setCenterY(pacMan.getCenterY() - 70);
+               pacMan.setCenterY(pacMan.getCenterY() + 7);
 
+               if(pacMan.getCenterY()>(pane.getHeight() - (60))){
+                  pacMan.setCenterY(pacMan.getCenterY() - 7);
+               }
+               pane.getChildren().removeAll(pacMan);
+               pane.getChildren().addAll(pacMan);
            }
       });
-   pane.setBottom(btLeft, btRight, btUp, btDown);
+   buttonPane.getChildren().addAll(btLeft, btRight, btUp, btDown);
+   pane.setBottom(buttonPane);
    /*
    btLeft.setAlignment(Pos.CENTER);
    btRight.setAlignment(Pos.CENTER);
